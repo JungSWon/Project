@@ -2,6 +2,20 @@ import requests
 import wget
 import csv
 import os 
+
+'''
+위에서 수집한 영화 대표코드를 활용하여 상세 정보를 수집합니다. 해당 데이터는 향후 영화평점서비스에서 영
+화 정보로 활용될 것입니다.
+
+##결과 
+영화별로 다음과 같은 내용을 저장합니다.
+영화 대표코드 , 영화명(국문) , 영화명(영문) , 영화명(원문) , 개봉연도 , 상영시간 , 장르 , 감독
+명 , 관람등급 , 배우1 , 배우2 , 배우3
+배우의 경우 최대 3명입니다. 영화에 따라 1~2명일 수도 있습니다.
+해당 결과를 movie.csv에 저장합니다.
+'''
+
+
 # http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=5b51146d5016cacd454419a8e831511c&movieCd=20184105
 #api_key = '5b51146d5016cacd454419a8e831511c'
 # mv_code = # boxoffice.py에서 가져오기 
