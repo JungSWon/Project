@@ -24,10 +24,10 @@ lastday = datetime(2019, 1, 13)
 
 f = open('boxoffice.csv','w',encoding='utf-8',newline='') #newline으로 결과.csv 줄띄움 없애기  
 movie = csv.writer(f)   
-movie.writerow(['code','name','record','at'])     #첫 제목행 만들기 
+movie.writerow(['movie_code','titile','audience','record_at'])     #첫 제목행 만들기 
 f.close()    # movie.csv생성 
 
-name_list = [] 
+name_li = [] 
 for i in range(10):
     today = lastday.strftime('%Y%m%d')
 
@@ -41,7 +41,9 @@ for i in range(10):
         f = open('boxoffice.csv','a',encoding='utf-8', newline='') #만들어진 movie.csv에 추가할거다 
         movie_set = csv.writer(f)   
         list_set = [li.get('movieCd'),li.get('movieNm'),li.get('audiAcc'),today] 
-        movie_set.writerow(list_set)
+        if li.get('movieNm') not in name_li:
+            movie_set.writerow(list_set)
+            name_li.append(li.get('movieNm'))
         f.close()
     lastday += timedelta(days= -7)
     
