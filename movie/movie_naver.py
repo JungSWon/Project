@@ -44,8 +44,8 @@ movie_code	thumb_url	link_url	user_rating
 ######### 왜????????????  mv_nm = mv_nm[1:] 의 의미가 뭐지 
 f = open('movie.csv','r',encoding='utf-8')
 movies = csv.reader(f)
-mv_nm = [(li[0],li[1] for li in movies)]
-mv_nm = mv_nm[1:]
+name = [(li[0],li[1] for li in movies)]
+name = name[1:]
 f.close()
 
 f = open('movie_naver.csv','w', encoding='utf-8', mewline='')
@@ -53,7 +53,45 @@ movies = csv.writer(f)
 movies.writerow(['movie_code','thumb_url','link_url','user_rating'])
 f.close()         # 제목 첫행 만들기 
 
+'''
+호출 
+curl "https://openapi.naver.com/v1/search/movie.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&genre=1" \
+    -H "X-Naver-Client-Id: {애플리케이션 등록 시 발급받은 client id 값}" \
+    -H "X-Naver-Client-Secret: {애플리케이션 등록 시 발급받은 client secret 값}" -v
 
+요청 
+> GET /v1/search/movie.xml?query=%EC%A3%BC%EC%8B%9D&display=10&start=1&genre=1 HTTP/1.1
+> Host: openapi.naver.com
+> User-Agent: curl/7.49.1
+> Accept: */*
+> X-Naver-Client-Id: {애플리케이션 등록 시 발급받은 client id 값}
+> X-Naver-Client-Secret: {애플리케이션 등록 시 발급받은 client secret 값}
+
+응답
+<rss version="2.0">
+    <channel>
+        <title>Naver Open API - movie ::'주식'</title>
+        <link>http://search.naver.com</link>
+        <description>Naver Search Result</description>
+        <lastBuildDate>Wed, 28 Sep 2016 16:40:17 +0900</lastBuildDate>
+        <total>2</total>
+        <start>1</start>
+        <display>2</display>
+        <item>
+            <title>주마등&lt;b&gt;주식&lt;/b&gt;회사</title>
+            <link>http://openapi.naver.com/l?AAADWLQQvCIBzFP83f48h0zh08uK1B0S2IOm7mUEIts0F9+vQQPN77vQfv+dbxI2DXgyTQ9QV4B+2ATNSLMCk9gEjYjlkurFZXflp1rFRw/yXnbEspNk8vqypvPJBRhZsGMrSMY4ySwLSpN5RT3NSYIScO5nxhdzc18cjq0958w8LneKUy8fz6AdRxjD6YAAAA</link><image>http://imgmovie.naver.com/mdi/mit110/0968/96811_P01_142155.jpg</image>
+            <subtitle>走馬&amp;amp;#28783;株式&amp;amp;#20250;社</subtitle>
+            <pubDate>2012</pubDate>
+            <director>미키 코이치로|</director>
+            <actor>카시이 유우|쿠보타 마사타카|카지와라 히카리|치요 쇼타|요코야마 메구미|카시와바라 슈지|</actor>
+            <userRating>4.50</userRating>
+        </item>
+        ...
+    </channel>
+</rss>
+'''
 for name in mv_nm:
     
-    url =f''
+    url =f'https://openapi.naver.com/v1/search/movie.json?query={name[1]}&yearfrom=2000&yearto=2019'
+
+    headers = {}

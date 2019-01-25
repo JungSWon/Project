@@ -40,8 +40,10 @@ for i in range(10):
     for li in rank_list: # 소스에서 받은 자료들을 
         f = open('boxoffice.csv','a',encoding='utf-8', newline='') #만들어진 movie.csv에 추가할거다 
         movie_set = csv.writer(f)   
-        list_set = [li.get('movieCd'),li.get('movieNm'),li.get('audiAcc'),today] 
-        movie_set.writerow(list_set)
+        list_set = [li.get('movieCd'),li.get('movieNm'),li.get('audiAcc'),today]
+        if li.get('movieNm') not in name_list:
+            movie_set.writerow(list_set)
+            name_list.append(li.get('movieNm'))
         f.close()
     lastday += timedelta(days= -7)
     

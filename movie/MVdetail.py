@@ -49,24 +49,24 @@ for cd in r_li:
     f = open('detail.csv','a',encoding='utf-8', newline='')
     movie_detail_set = csv.writer(f) 
     #info -{영화코드, 영화명(국문), 영화명(영문), 영화명(원문), 개봉연도, 상영시간} 
-    detail_basic_set = [cd.get('movieCd'),cd.get('movieNm'),cd.get("movieNmEn"),cd.get("movieNmOg"),cd.get("prdtYear"),cd.get("showTm")]
+    detail_basic_set = [detail_list.get('movieCd'),detail_list.get('movieNm'),detail_list.get("movieNmEn"),detail_list.get("movieNmOg"),detail_list.get("prdtYear"),detail_list.get("showTm")]
     # 장르, 감독명, 관람등급, 배우1,2,3(영화에 따라 2명일 수 있음)
     #info={genres-genreNm(복수개), directors-peopleNm, audits-watchGradeNm, actors- peopleNm(3명까지)}
     #장르
     genr_str = ''   
-    for g in cd.get('genres'):
+    for g in detail_list.get('genres'):
         genr_str += g.get('genreNm') + '/'
     detail_basic_set.append(genr_str[:-1]) #마지막'/'빼기
     #감독
     direc_str = ''   
-    for d in cd.get('directors'):
+    for d in detail_list.get('directors'):
         direc_str += d.get('peopleNm') +'/'
     detail_basic_set.append(direc_str[:-1])
     #관람등급
-    detail_basic_set.append(cd.get('audits')[0].get('watchGradeNm')[0])
+    detail_basic_set.append(detail_list.get('audits')[0].get('watchGradeNm')[0])
     #배우들 
     i = 0
-    for a in cd.get('actors'):
+    for a in detail_list.get('actors'):
         detail_basic_set.append('peopleNm')
         i+=1
         if i ==3:
