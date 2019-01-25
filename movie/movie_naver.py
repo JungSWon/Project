@@ -2,9 +2,10 @@
 import os 
 import csv
 import requests 
+from pprint import pprint as pp
 
-client_id = os.getnv('NAVER_ID')
-client_secret = os.getnv('NAVER_SECRET')
+client_id = os.getenv('NAVER_ID')
+client_secret = os.getenv('NAVER_SECRET')
 
 
 '''
@@ -44,11 +45,11 @@ movie_code	thumb_url	link_url	user_rating
 ######### 왜????????????  mv_nm = mv_nm[1:] 의 의미가 뭐지 
 f = open('movie.csv','r',encoding='utf-8')
 movies = csv.reader(f)
-name = [(li[0],li[1] for li in movies)]
-name = name[1:]
+mv_nm = [(li[0],li[1]) for li in movies]
+mv_nm = mv_nm[1:]
 f.close()
 
-f = open('movie_naver.csv','w', encoding='utf-8', mewline='')
+f = open('movie_naver.csv','w', encoding='utf-8', newline='')
 movies = csv.writer(f)
 movies.writerow(['movie_code','thumb_url','link_url','user_rating'])
 f.close()         # 제목 첫행 만들기 
@@ -92,6 +93,17 @@ curl "https://openapi.naver.com/v1/search/movie.xml?query=%EC%A3%BC%EC%8B%9D&dis
 '''
 for name in mv_nm:
     
-    url =f'https://openapi.naver.com/v1/search/movie.json?query={name[1]}&yearfrom=2000&yearto=2019'
+    url =f"https://openapi.naver.com/v1/search/movie.json?query={name[1]}&yearfrom=2000&yearto=2019"
 
-    headers = {}
+    headers = {'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret }
+    response = requests.get(url, headers=headers)
+    doc = response.json()
+
+    pp(doc)
+
+    li = doc.get('items')[0]
+    f = open('movie_naver.csv', 'a', encoding="utf-8", newline="")
+    search_a = csv.writer(f)
+    mo_se = [name[0], li.get('image'), li.get('link'), li.get('userRating')]
+    search_a.writerow(mo_se)
+    f.close()
