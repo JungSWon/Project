@@ -1,0 +1,169 @@
+html{
+    font-size: 12px;
+    font-family: 'Work Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+
+
+/*  Navigation Bar 
+        1 최상단
+        2 Item List : 우측정렬
+            Home 제외 나머지는 클릭불가(disable) 
+        3 반응형, 햄버거바
+        4 Sticky(fixed) navigation bar :
+            body{
+                바디태그의 높이지정하여 스크롤 생성후 
+                nav bar가 상단 고정인지 확인하기
+                height : 10000px;
+            }
+        + 글씨, 색상 자유롭게ㅜ
+        + 좌측 로고 등을 이미지로 교체해도 좋음
+*/
+body{
+    height: 10000px;
+}
+
+    /* 바 전체 */
+    /* 네브바 배경색, 투명도? */
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(210, 208, 222, 0.8)
+}
+    /* 아이템 좌측이동 */
+.collapse.navbar-collapse {
+    justify-content: flex-end;
+}
+
+    /* 네브바 좌측 대표이름, 로고 */
+.navbar-brand, .footer-brand {
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+    /* 네브바 우측 아이템들 */
+.nav-item{
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  Header
+        - nav bar 아래 
+        2 높이 350px, 너비 브라우저 전체영역
+        3 이미지: 선택, 배경이미지필수
+        4 h2 태그사용
+        5 h2 : Header 영역의 수직,수평 가운데 정렬 위치 
+        + Header 배경이미지, 색상필터 자유롭게 
+        + 배경 이미지와 관련하여 css속성 background-* 활용 
+*/
+
+
+    /* 커버전체 */
+#cover{
+    display: flex;
+    /* 가로축 좌측정렬 */
+    justify-content: flex-start;
+    /* 세로축 중앙정렬 */
+    align-items: center;
+    padding-top: 40px;
+    /* 2 */
+    /* 보여지는 최소 높이  */
+    height: 350px;
+    background-size: cover;
+    /* 3 */
+    background-image: url('../02.web/assets/film1.jpg');
+    background-position: center center;
+    color: floralwhite;
+}
+
+    /* 5 */
+    /* 타이틀 '~인생이짧다' */
+.cover-title{
+    font-size: 60px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+    /* 텍스트 '꿀잼영화만~' */
+.cover-text{
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+
+
+/*  Footer
+        - 브라우저 최하단: sticy, 내용 최하단 중 택1
+        2 높이 50px 이상, 너비 브라우저 전체 영역
+        3 좌: 이름 또는 닉네임 우: 헤더로 올라가는 링크
+        4 padding이 좌우로 3rem
+        + 상단으로 이동하는 링크, 버튼, 텍스트 자유롭게 구성. 
+*/
+
+/* 1 */
+/* 2 */
+#footer{
+    /* 4 */
+    padding: 0 3rem; 
+    height: 200px;
+    background-color: #1c2625;
+    color: floralwhite;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* 3 */
+.footer-copy{
+    letter-spacing: -0.04;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+.footer-text{
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+ul a{
+    color: inherit;
+}
+
+/* 3 */
+a.top{
+    line-height: 5rem;
+    margin-bottom: 20px; 
+}
+
+a.top img{
+    width: 150px; 
+    height: 150px;
+    position: relative;
+    top: -30px;
+}
