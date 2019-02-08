@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,700,900|Roboto+Mono:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="screen" />
+    <title>list in DB</title>
+</head>
+
+
+    
+<!-- title, title_en, audience, open_date, genre, watch_grade, score, poster_url, description-->
+<!--
+    <form action='/movies/{{m.id}}/update' method = "POST">
+        <div class="form-group">    
+        title: <input type='text' name='title' value='{{m.title}}'><br>
+        title_en: <input type='text' name='title_en' value='{{m.title_en}}'><br>
+        audience: <input type='number' name='audience' min=0 value='{{m.audience}}'><br>
+        
+        open_date: <input type='date' name='open_date' value="{{m.open_date.strftime('%Y-%m-%d')}}"><br>
+        genre: <input type='text' name='genre' value='{{m.genre}}'><br>
+        watch_grade: <input type='text' name='watch_grade' value='{{m.watch_grade}}'><br>
+        score: <input type='number' name='score' max=5 min=0 step=0.5 value='{{m.score}}'><br>
+        poster_url: <input type='text' name='poster_url' value='{{m.poster_url}}'><br>
+        description:<br> <textarea class="form-control" rows="5" name='description'>{{m.description}}</textarea>
+        <br>
+        </div>
+        <button type="submit" class="btn btn-primary">Form Submit</button>
+    </form>
+-->    
+    
+    
+    
+    
+    
+    
+    <section id='cover'>
+        <div class="container">
+            <div class="col">
+                <h3 class="cover-title">
+                    다시보니 어땠어? 
+                </h3>
+                <a class="cover-text"> 지난 영화도 다시보자, 내 마음은 갈대니까 </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <form action='/movies/{{m.id}}/update'  method = "POST">
+        <div class="container">
+            <div class="col">
+            <!--아래로 코멘트 생성 -->
+                <!--타이틀-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">영화타이틀</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="영화타이틀" value='{{m.title}}' name='title' aria-describedby="basic-addon1">
+                </div>
+                <!--영문타이틀-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">영문타이틀</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="영문타이틀" value='{{m.title_en}}' name='title_en' aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <!--관객수-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">관객수</span>
+                    </div>
+                    <input type="number"  min=0 class="form-control" placeholder="관객수" value='{{m.audience}}' name='audience' aria-describedby="basic-addon1">
+                </div>
+                <!--개봉일-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">개봉일</span>
+                    </div>
+                    <input type="date" class="form-control" value="{{m.open_date.strftime('%Y-%m-%d')}}" name='open_date' aria-describedby="basic-addon1">
+                </div>
+                <!--장르-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">장르</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="장르" value='{{m.genre}}' name='genre' aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <!--관람연령-->
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">관람연령</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="00세이상관람가/전체관람가" value='{{m.watch_grade}}' name='watch_grade' aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+
+                <!--별점-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">평점</span>
+                    </div>
+                    <input type="number" max=5 min=0 step=0.5 class="form-control" value='{{m.score}}' name='score' aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                <!--포스터URL-->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2"> 포스터URL</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="https://주소를.입력해.주세요/" value='{{m.poster_url}}' name='poster_url' aria-label="Recipient's username" aria-describedby="basic-addon2">
+                </div>
+                
+
+                <!--평가-->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">평가</span>
+                    </div>
+                    <textarea class="form-control" name='description' rows='7' aria-label="With textarea">{{m.description}}</textarea>
+                </div>
+            <!--코멘트 인풋 그룹 끝--> 
+            
+                <div align="right" class="fin_btn" role="group" aria-label="Basic example" >
+                    <button type="submit" class="btn btn-secondary">작성완료</button>
+                </div>
+                
+            </div>
+        </div>
+    </form>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

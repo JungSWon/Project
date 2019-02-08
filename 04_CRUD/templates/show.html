@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,700,900|Roboto+Mono:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" media="screen" />
+    <title>list in DB</title>
+</head>
+
+
+<body>
+    <!--
+        title, title_en, audience, open_date, genre, watch_grade, score, poster_url, description
+    -->
+
+    <!--
+    <h1 class="display-4">{{m.title}}</h1>
+    영화제목 : {{m.title}} / {{m.title_en}} <br> 
+    관객수 : {{m.audience}} <br> 
+    개봉일 : {{m.open_date}}<br> 
+    {{m.genre}}<br> 
+    {{m.watch_grade}}세 이상 관람가<br> 
+    평점: {{m.score}}<br> 
+    {{m.poster_url}}<br> 
+    {{m.description}}<br>
+    <div class="row">
+        <a class="btn btn-outline-info" href="/movies/{{m.id}}/edit" role="button">수정</a>
+        <a class="btn btn-outline-warning" href="/movies/{{m.id}}/delete" role="button">삭제</a>
+        <a class="btn btn-outline-secondary" href="/movies" role="button">목록</a>
+    </div>
+    -->
+
+    <div class="container">
+        <div class="jumbotron">
+            
+            <h1 class="display-4">{{m.title}}</h1>
+            
+            <p class="lead">    
+                {{m.title_en}} <br><br> 
+                관객수 : {{m.audience}} <br> 
+                개봉일 : {{m.open_date.strftime('%Y-%m-%d')}}<br> 
+                {{m.genre}}<br> 
+                {{m.watch_grade}}<br> 
+                평점: {{m.score}}<br> 
+
+            </p>
+            
+            <hr class="my-4">
+            <p>{{m.description}}</p>
+            
+            
+            
+            <div align="right" class="show_btn" role="group" aria-label="Basic example" >
+                <a class="btn btn-secondary" href="/movies/{{m.id}}/edit" role="button">수정</a>
+                <a class="btn btn-secondary" href="/movies/{{m.id}}/delete" role="button">삭제</a>
+                <a class="btn btn-secondary" href="/movies" role="button">목록</a>
+            </div>
+
+
+        </div>
+    </div>
+    
+
+                                   
+    
+</body>
+</html>
