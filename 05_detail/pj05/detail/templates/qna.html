@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+프로젝트공오다시디테일 - QnA
+{% endblock %}
+
+
+{% block body %}
+<div class='container'>
+    
+    <div class="page-body container"> 
+        <div class="qnatitle">
+            <h2>Q&A</h2>
+        </div>
+    
+        <form class='qna-input'>
+            <div class='container'>
+                <div class= 'row justify-content-center'>
+                    <div class="col-lg-6  col-md-12 form-group">
+                        <label for="exampleFormControlInput1">제목</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" name='title'>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 form-group">
+                        <label for="exampleFormControlInput1">이메일</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" name='email'>
+                    </div>
+                </div>
+            </div>
+            <div class='container'>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">내용</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='question'></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">submit</button>
+            </div>
+        </form>        
+    </div>
+</div>
+
+
+{% endblock %}
+
