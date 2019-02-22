@@ -1,0 +1,164 @@
+html{
+    font-size: 12px;
+    font-family: 'Work Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+}
+
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(210, 208, 222, 0.1);
+    position: absolute;
+    
+}
+
+
+
+    /* 아이템 좌측이동 */
+.collapse.navbar-collapse {
+    justify-content: flex-end;
+}
+
+
+    /* 네브바 좌측 대표이름, 로고 */
+.navbar-light .navbar-brand {
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    color: #c3cbd1;
+}
+
+
+
+
+
+/*index*/
+
+
+#cover{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+    background-size: cover;
+    background-position: center center;
+    color: floralwhite;
+    background-image: url('/static/assets/cover.jpg');
+}
+
+.cover-title{
+    font-size: 60px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+#footer{
+    padding: 0 1rem 0 3rem; 
+    height: 50px;
+    background-color: #607485;
+    color: #121312;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.footer-copy{
+    letter-spacing: -0.04;
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+}
+
+
+
+a.top{
+    line-height: 2rem;
+    margin-bottom: 10px; 
+}
+
+a.top img{
+    width: 30px; 
+    height: 30px;
+    position: relative;
+}
+
+
+
+.page-body{
+    margin: 100px 30px;
+}
+
+
+/*signup*/
+.signup-t{
+    margin:30px 0;
+}
+
+
+
+
+
+/*Q&A*/
+.qnatitle{
+    margin:30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+/*mypage*/
+
+.mypage-body{
+    margin: 100px 200px;
+}
+
+.image-cropper {
+    width: 184px;
+    height: 184px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.card-img-top round {
+    margin: auto 0;
+    height: auto;
+    width: 100%;
+}
+
+
+/*notfound*/
+
+#notfound-cover{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 350px;
+    background-size: cover;
+    background-position: center center;
+    color: floralwhite;
+    background-color: #ede279;
+}
+
+
+#notfound-cover .cover-title{
+    font-size: 60px;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
