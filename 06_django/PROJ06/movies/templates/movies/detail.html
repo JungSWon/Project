@@ -1,0 +1,16 @@
+
+<h1>{{movie.title}}</h1>
+
+<p>    
+    관객수 : {{movie.audience}} <br> 
+    {{movie.genre}}<br> 
+    평점: {{movie.score}}<br>
+    포스터 이미지: {{movie.poster_url}} 
+</p>
+
+<p>{{movie.description}}</p>
+
+
+<a class="btn btn-secondary" href="{% url 'edit' movie.id %}" role="button">수정</a>
+<a class="btn btn-secondary" href="{% url 'delete' movie.id %}" role="button">삭제</a>
+<a class="btn btn-secondary" href="{% url 'index' %}" role="button">목록</a>

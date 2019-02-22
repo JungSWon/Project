@@ -1,0 +1,58 @@
+<form action="{% url 'update' movie.id %}"  method = "POST">
+    <div class="container">
+        <div class="col">
+            <!--타이틀-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">영화타이틀</span>
+                </div>
+                <input type="text" class="form-control" placeholder="영화타이틀" value='{{movie.title}}' name='title' aria-describedby="basic-addon1">
+            </div>
+            <!--관객수-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">관객수</span>
+                </div>
+                <input type="number"  min=0 class="form-control" placeholder="관객수" value='{{movie.audience}}' name='audience' aria-describedby="basic-addon1">
+            </div>
+            <!--장르-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">장르</span>
+                </div>
+                <input type="text" class="form-control" placeholder="장르" value='{{movie.genre}}' name='genre' aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+
+            <!--별점-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">평점</span>
+                </div>
+                <input type="number" max=10 min=0 step=0.5 class="form-control" value='{{movie.score}}' name='score' aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            
+            <!--포스터URL-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2"> 포스터URL</span>
+                </div>
+                <input type="text" class="form-control" placeholder="https://주소를.입력해.주세요/" value='{{movie.poster_url}}' name='poster_url' aria-label="Recipient's username" aria-describedby="basic-addon2">
+            </div>
+            
+
+            <!--평가-->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">평가</span>
+                </div>
+                <textarea class="form-control" name='description' rows='7' aria-label="With textarea">{{movie.description}}</textarea>
+            </div>
+        <!--코멘트 인풋 그룹 끝--> 
+        
+            <div align="right" class="fin_btn" role="group" aria-label="Basic example" >
+                <button type="submit" class="btn btn-secondary">작성완료</button>
+            </div>
+        </div>
+    </div>
+    {% csrf_token %}
+</form>    

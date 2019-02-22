@@ -1,0 +1,18 @@
+
+<h1>영화정보 추천사이트의 영화정보 데이터 관리 </h1>
+
+
+<table>
+    <tr>
+        <th>영화제목</th>
+        <th>별점</th>
+    </tr>    
+    {% for movie in movies %}
+    <tr>
+        <td><a href="{% url 'detail' movie.id %}">{{movie.title}}</a></td>
+        <td>{{movie.score}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'new' %}">영화등록</a>
