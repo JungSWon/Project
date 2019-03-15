@@ -9,5 +9,5 @@ urlpatterns = [
     path('<int:movie_id>/',views.movie_delete,name = 'movie_del'),
 
     path('<int:movie_id>/scores/new',views.score_new,name = 'score_new'),
-    path('<int:movie_id>/scores/<int:score_id>/delete',views.score_new,name = 'score_del'),
+    path('<int:movie_id>/scores/<int:score_id>/delete',views.score_delete,name = 'score_del'),
 ]

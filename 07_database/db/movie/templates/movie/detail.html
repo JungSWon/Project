@@ -1,0 +1,26 @@
+{% extends 'movie/base.html' %}
+{% block is_detail %}active{% endblock %}
+
+{% block body %}
+<!-- 영화의 모든 정보(장르포함) 표시 -->
+<h1>{{movie.title}}</h1>
+
+<p>
+    관객수 : {{movie.audience}} <br>
+    {{movie.genre}}<br>
+    <img src="{{ movie.poster_url }}" class="card-img-top image-fluid" style="width: 400px; height: auto;">
+</p>
+
+<p>{{movie.description}}</p>
+
+<!-- 영화정보 최하단에 목록, 수정, 삭제 -->
+
+<a class="btn btn-secondary" href="" role="button">수정</a>
+<a class="btn btn-secondary" href="{% url 'movie:movie_del' movie.id %}" role="button">삭제</a>
+<a class="btn btn-secondary" href="{% url 'movie:list' %}" role="button">목록</a>
+
+<!-- 아래에 모든 한줄평과 평점을 출력합니다.  -->
+<!-- score form html 불러오기   -->
+{% include 'movie/_score.html' %}
+
+{% endblock %}
