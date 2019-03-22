@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd971b42-697f-46e8-aafb-67b28fa58012" name="Default Changelist" comment="" />
+    <list default="true" id="dd971b42-697f-46e8-aafb-67b28fa58012" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../08_SeedData/seeddata/movies/fixtures/genre.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../08_SeedData/seeddata/movies/fixtures/movie.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/movie/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../08_SeedData/seeddata/seeddata/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../08_SeedData/seeddata/seeddata/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/movie/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="23" selection-end-column="77" />
+            <state relative-caret-position="529">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -103,12 +117,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553218085088</updated>
-      <workItem from="1553218087401" duration="1061000" />
+      <workItem from="1553218087401" duration="1801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1061000" />
+    <option name="totallyTimeSpent" value="1801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -150,8 +164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/movie/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="23" selection-end-column="77" />
+        <state relative-caret-position="529">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
         </state>
       </provider>
     </entry>
