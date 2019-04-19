@@ -1,0 +1,9 @@
+#Virtual ENV
+venv/
+
+# Pycharm Auto Generated DIR
+.idea/
+pycache  /
+
+#DB
+*.salite3

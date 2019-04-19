@@ -1,0 +1,22 @@
+
+{% extends 'movie/base.html' %}
+{% block is_list %}active{% endblock %}
+
+<!-- 모든 영화 목록  표시 -->
+<!-- 각 영화의 title, poster -->
+<!-- title 클릭시 해당영화 detail 페이지로 -->
+
+{% block body %}
+    <section class="card-columns">
+        {% for movie in movies %}
+            <article class="card mb-3">
+                    <img src="{{ movie.poster_url }}" class="card-img-top image-fluid">
+                <div class="card-body">
+                    <a href="{% url 'movie:detail' movie.id %}">
+                        <h4>{{ movie.title }}</h4>
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
