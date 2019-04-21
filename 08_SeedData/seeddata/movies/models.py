@@ -17,7 +17,7 @@ class Movie(models.Model):
 
 class Score(models.Model):
     content = models.CharField(max_length=80, default='')
-    score = models.IntegerField()
+    score = models.FloatField()
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     def __str__(self):

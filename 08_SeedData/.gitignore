@@ -1,5 +1,5 @@
 #Virtual ENV
-../venv/
+venv
 
 # Pycharm Auto Generated DIR
 .idea/
